@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-primary: #4657C8;
+    --color-primary-hover: #3848B0;
+    --color-primary-container: #202B3D;
+    --color-secondary: #168C86;
+    --color-secondary-hover: #11726D;
+    --color-accent: #E8A23A;
+    --color-bg-dark: #111827;
+    --color-surface-dark: #1B2435;
+    --color-surface-variant-dark: #151D2C;
+    --color-text-main-dark: #F1F5F9;
+    --color-text-sub-dark: #94A3B8;
+    --color-border-dark: #2D3748;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #111827;
+    color: #E2E8F0;
+  }
+
+  /* Code font */
+  code, pre, kbd {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom dark scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #111827;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Material Design elevation cards (Dark Native) */
+.m3-card {
+  background-color: #1B2435;
+  border: 1px solid #2D3748;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  transition: all 0.25s cubic-bezier(0.2, 0, 0, 1);
+}
+.m3-card:hover {
+  border-color: #475569;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+}
+
+/* Accessibility: respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
